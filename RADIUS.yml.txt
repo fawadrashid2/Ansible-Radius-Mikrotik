@@ -1,0 +1,9 @@
+- name: Add RADIUS client to Mikrotik CHR
+  hosts: mikrotik
+  connection: network_cli
+  tasks:
+    - name: Add RADIUS client
+      community.routeros.command:
+        commands:
+          - /radius add address=35.227.71.209 secret=testing123 service=hotspot
+
